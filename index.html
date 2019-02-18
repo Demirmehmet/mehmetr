@@ -1,1 +1,179 @@
-index burada MehmetR
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<style>
+.marker-cluster-small {
+	background-color: rgba(181, 226, 140, 0.6);
+	}
+.marker-cluster-small div {
+	background-color: rgba(110, 204, 57, 0.6);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(241, 211, 87, 0.6);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(240, 194, 12, 0.6);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(253, 156, 115, 0.6);
+	}
+.marker-cluster-large div {
+	background-color: rgba(241, 128, 23, 0.6);
+	}
+
+	/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+	background-color: rgb(181, 226, 140);
+	}
+.leaflet-oldie .marker-cluster-small div {
+	background-color: rgb(110, 204, 57);
+	}
+
+.leaflet-oldie .marker-cluster-medium {
+	background-color: rgb(241, 211, 87);
+	}
+.leaflet-oldie .marker-cluster-medium div {
+	background-color: rgb(240, 194, 12);
+	}
+
+.leaflet-oldie .marker-cluster-large {
+	background-color: rgb(253, 156, 115);
+	}
+.leaflet-oldie .marker-cluster-large div {
+	background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
+	
+	.foseptik-cluster {
+		width: 20px;
+		height: 20px;
+		background-color: hsla(56, 90%, 33%, 0.60);
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+		border-style: solid;
+	}
+	
+	.kanal-cluster {
+		width: 20px;
+		height: 20px;
+		background-color: hsla(339, 100%, 33%, 0.50);
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+		border-style: solid;
+	}
+	
+	.su-cluster {
+		width: 20px;
+		height: 20px;
+		background-color: hsla(242, 75%, 63%, 0.50);
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+		border-style: solid;
+	}
+	
+	.kanal-sebeke-cluster {
+		width: 20px;
+		height: 20px;
+		background-color: hsla(141, 88%, 33%, 0.50);
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+		border-style: solid;
+	}
+	
+	.susuzluk-cluster {
+		width: 20px;
+		height: 20px;
+		background-color: hsla(57, 79%, 63%, 0.60);
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+		border-style: solid;
+	}
+	
+</style>
+<head>
+    <title>Cluster Deneme</title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	  
+	<!-- Leaflet harita ekleme js vs css dosyaları -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>    
+
+    <style>
+    #map {
+        width: 100%;
+        height: 600px;
+    }
+    </style>
+</head>
+
+<body class="menu-static">
+ 
+    <!-- Menu header end -->
+    <!-- Menu aside start -->
+    <div class="main-menu">
+  
+    <!-- Sidebar inner chat end-->
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper"> 
+            <!-- Page header end -->
+            <!-- Page body start -->
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-block">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>  
+	  
+    <script>
+	
+	var ilceLayer, mahalleLayer; 
+	
+	//harita oluştur extend ver zoom seviyesi belirle
+    var map = L.map('map', {
+        maxZoom: 23
+    }).setView([41.378815, 29.568621], 10);
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 23,
+        attribution: "",
+        id: 'mapbox.light'
+	}).addTo(map); 
+	
+    </script>
+</body>
+</html>

@@ -31,37 +31,38 @@
 			</p>
 
 			<h3 class="l1-txt1 txt-center p-b-22">
-				Çok Yakında
+				Coming Soon
 			</h3>
 
 			<p class="txt-center m2-txt1 p-b-67">
+				Our website is under construction, follow us for update now!
 			</p>
 
 			<div class="flex-w flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 days">4</span>
-					<span class="m2-txt2">Yıl</span>
+					<span class="l1-txt2 p-b-4 days"> ?? </span>
+					<span class="m2-txt2">Days</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22">:</span>
 				
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 hours">3</span>
-					<span class="m2-txt2">Ay</span>
+					<span class="l1-txt2 p-b-4 hours">??</span>
+					<span class="m2-txt2">Hours</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22 respon2">:</span>
 
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 minutes">2</span>
-					<span class="m2-txt2">Hafta</span>
+					<span class="l1-txt2 p-b-4 minutes">??</span>
+					<span class="m2-txt2">Minutes</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22">:</span>
 
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 seconds">3</span>
-					<span class="m2-txt2">Gün</span>
+					<span class="l1-txt2 p-b-4 seconds">??</span>
+					<span class="m2-txt2">Seconds</span>
 				</div>
 			</div>
 
@@ -95,15 +96,48 @@
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
+	
+	
+		
+		// Set the date we're counting down to
+		var countDownDate = new Date("Aug 1, 2023 00:00:00").getTime();
+		
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "Oh Be!";
+		}
+		}, 1000);
+	
+	
 		$('.cd100').countdown100({
 			/*Set Endtime here*/
 			/*Endtime must be > current time*/
 			endtimeYear: 0,
 			endtimeMonth: 0,
-			endtimeDate: 4,
-			endtimeHours: 3,
-			endtimeMinutes: 2,
-			endtimeSeconds: 3,
+			endtimeDate: days,
+			endtimeHours: hours,
+			endtimeMinutes: minutes,
+			endtimeSeconds: seconds,
 			timeZone: "" 
 			// ex:  timeZone: "America/New_York"
 			//go to " http://momentjs.com/timezone/ " to get timezone

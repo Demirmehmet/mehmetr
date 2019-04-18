@@ -40,29 +40,29 @@
 
 			<div class="flex-w flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 days"> ?? </span>
-					<span class="m2-txt2">Days</span>
+					<span id="gun" class="l1-txt2 p-b-4 days"> ?? </span>
+					<span class="m2-txt2">Gün</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22">:</span>
 				
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 hours">??</span>
-					<span class="m2-txt2">Hours</span>
+					<span id="saat" class="l1-txt2 p-b-4 hours">??</span>
+					<span class="m2-txt2">Saat</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22 respon2">:</span>
 
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 minutes">??</span>
-					<span class="m2-txt2">Minutes</span>
+					<span id="dakika" class="l1-txt2 p-b-4 minutes">??</span>
+					<span class="m2-txt2">Dakika</span>
 				</div>
 
 				<span class="l1-txt2 p-b-22">:</span>
 
 				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 seconds">??</span>
-					<span class="m2-txt2">Seconds</span>
+					<span id="saniye" class="l1-txt2 p-b-4 seconds">??</span>
+					<span class="m2-txt2">Saniye</span>
 				</div>
 			</div>
 
@@ -97,9 +97,7 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
 	
-	
-		
-		// Set the date we're counting down to
+			// Set the date we're counting down to
 		var countDownDate = new Date("Aug 1, 2023 00:00:00").getTime();
 		
 		// Update the count down every 1 second
@@ -118,30 +116,19 @@
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 			
 		// Output the result in an element with id="demo"
-		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-		+ minutes + "m " + seconds + "s ";
+		document.getElementById("gun").innerHTML = days;
+		document.getElementById("saat").innerHTML = 		hours;
+		document.getElementById("dakika").innerHTML = minutes 
+		document.getElementById("saniye").innerHTML =		seconds + "s ";
 			
 		// If the count down is over, write some text 
 		if (distance < 0) {
 			clearInterval(x);
-			document.getElementById("demo").innerHTML = "Oh Be!";
+			document.getElementById("demo").innerHTML = "Bitti";
 		}
 		}, 1000);
-	
-	
-		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: days,
-			endtimeHours: hours,
-			endtimeMinutes: minutes,
-			endtimeSeconds: seconds,
-			timeZone: "" 
-			// ex:  timeZone: "America/New_York"
-			//go to " http://momentjs.com/timezone/ " to get timezone
-		});
+
+ 
 	</script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>

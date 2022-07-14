@@ -1,0 +1,37 @@
+$black : #000000;
+$pink: #FFE6E7;
+$blue :#6666FF;
+$contact-submit-blue :#4C4CFF;
+$blue-border :#9999FF;
+$blue-dark :#9999FF;
+$blue-light: #CCCCFF;
+$blue-light-2: #E5E5FF;
+$white : #FFFFFF;
+$green : #17B5AD;
+$green-dark : #1CE3D9;
+$green-light : #A4F4F0;
+$green-light-2 : #78F3ED;
+$green-light-3 : #D2F9F7;
+$green-light-4 : #77EEE8;
+$red-light: #FFE6E7;
+$red: #FEB4B8;
+$red-border: #FD8289;
+
+@font-face {
+	font-family: "ProximaNova-Regular";
+	src: url("../font/ProximaNova-Regular.otf");
+}
+
+@font-face {
+	font-family: "ProximaNova-Bold";
+	src: url("../font/ProximaNovaBold.otf");
+}
+
+@font-face {
+	font-family: "ProximaNova-Extrabold";
+	src: url("../font/ProximaNovaExtrabold.ttf");
+}
+
+$font-regular: "ProximaNova-Regular";
+$font-bold: "ProximaNova-Bold";
+$font-extrabold: "ProximaNova-Extrabold";

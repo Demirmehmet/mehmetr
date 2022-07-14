@@ -1,0 +1,529 @@
+@import "./variables";
+
+* {
+	font-family: $font-regular, sans-serif;
+}
+
+.fw-regular {
+	font-family: $font-regular, sans-serif;
+}
+
+.fw-bold {
+	font-family: $font-bold, sans-serif;
+}
+
+
+/*******************************
+ *  Header 
+ *******************************/
+
+@import "./header.scss";
+
+
+/**************
+ * Section 1
+ **************/
+
+#section1 {
+
+	margin-top: 80px;
+	margin-bottom: 180px;
+	width: 92%;
+	display: flex;
+	flex-direction: column;
+
+	.blogTitleArea {
+		padding: 40px 0 40px 0px;
+
+		&::before {
+			content: " ";
+			height: 100%;
+			background: $red-border;
+			position: absolute;
+			top: 0;
+			display: block;
+			z-index: -1;
+			animation: backAnimation 0.8s ease 1s both;
+		}
+
+		@keyframes backAnimation {
+
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: 100%;
+			}
+
+		}
+
+		h2 {
+
+			span.text {
+				font-size: 96px;
+				padding-left: 60px;
+			}
+
+			span.line {
+				width: 100%;
+				height: 4px;
+				top: 0;
+				left: 0;
+				display: block;
+				background: $black;
+				margin-right: 150px;
+
+				.linejr-1 {
+					height: 348px;
+					position: absolute;
+					width: 4px;
+					display: block;
+					background: black;
+					right: 0;
+					z-index: 2;
+
+					.linejr-2 {
+						height: 4px;
+						width: 40px;
+						right: -4px;
+						background: black;
+						transform: rotate(45deg);
+						bottom: 14px !important;
+					}
+
+					.linejr-3 {
+						height: 4px;
+						width: 100%;
+						right: -7px;
+						background: black;
+						transform: rotate(45deg);
+						bottom: 16px !important;
+					}
+				}
+			}
+		}
+	}
+
+	.bottomRight {
+		width: 320px;
+		height: 410px;
+
+
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 1px;
+			bottom: 0;
+			background: #A4F4F0;
+			animation: bottomRight 0.6s ease-out 1.8s both;
+			z-index: -2;
+			width: 320px;
+
+		}
+
+		@keyframes bottomRight {
+
+			0% {
+				transform: scaleY(0);
+			}
+
+			100% {
+				transform: scaleY(1);
+			}
+		}
+
+
+
+	}
+
+
+	.bottomRightText {
+
+		width: 650px;
+		height: 320px;
+		position: absolute;
+		bottom: 0;
+
+		&::before {
+			content: " ";
+			height: 100%;
+			background: #A4F4F0;
+			position: absolute;
+			right: 320px;
+			top: 0;
+			z-index: -1;
+			animation: bottomRightText 0.6s ease-out 2.3s both;
+			width: calc(100% - 320px);
+		}
+
+		@keyframes bottomRightText {
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: calc(100% - 320px);
+			}
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 26px;
+
+		}
+	}
+
+	/**************
+	* Küp svg
+	**************/
+
+	.cupeArea {
+		bottom: -30px;
+		right: 800px;
+
+		.cupe-2 {
+			transform: translate(-40px, 40px);
+		}
+	}
+
+	.cupeAreaSection8 {
+		top: 50px;
+		right: 180px;
+
+		.cupe-2 {
+			transform: translate(-40px, 40px);
+		}
+	}
+
+	@media (min-width: 1200px) and (max-width:1500px) {
+		.cupeArea {
+			bottom: -30px;
+			right: 640px;
+		}
+	}
+
+}
+
+/**************
+ * Section Blogs
+ **************/
+
+#blogs {
+	.card {
+		position: relative;
+		width: 100%;
+		height: auto;
+		background: #CCCCFF;
+		border: 3px solid #9999FF;
+		padding: 32px;
+		transition: all .3s;
+		border-radius: 0;
+		z-index: 2;
+
+		&:hover {
+			transform: translate(-30px, -30px);
+			transition: all .3s;
+		}
+
+		img {
+			border-radius: 0;
+			width: 100%;
+		}
+
+		.card-body {
+			.username {
+				font-size: 20px;
+				font-weight: bold;
+				color: $black;
+				margin-bottom: 18px;
+				display: block;
+			}
+
+			.card-title {
+				font-size: 39px;
+				font-weight: bold;
+				color: $black;
+				line-height: 43.5px;
+				margin-bottom: 17px;
+			}
+
+			.card-text {
+				font-size: 20px;
+				color: $black;
+				line-height: 26px;
+				margin-bottom: 18px;
+			}
+
+			.cardButton {
+				a {
+					position: relative;
+					padding: 11px 24px;
+					color: rgba(153, 153, 255, 0.8);
+					border: 2px solid rgba(153, 153, 255, 0.8);
+					display: inline-block;
+
+					&::after {
+						position: absolute;
+						content: "";
+						top: 0;
+						left: 0;
+						width: 0;
+						height: 100%;
+						background: rgba(153, 153, 255, 0.8);
+						transition: all .30s;
+					}
+
+					&:hover::after {
+						transition: all .30s;
+						width: 100%;
+
+					}
+
+					&:hover {
+						color: #fff;
+						transition: all .30s;
+					}
+
+					span {
+						position: relative;
+						z-index: 4;
+						font-size: 16px;
+						line-height: 19px;
+						font-weight: 800;
+					}
+				}
+			}
+		}
+	}
+
+	.cardBottom {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: $white;
+		border: 3px dashed $blue;
+		padding: 32px;
+		z-index: 1;
+
+		h2 {
+			font-size: 39px;
+			line-height: 44px;
+			font-weight: 800;
+			margin-bottom: 8px;
+		}
+
+		p {
+			font-size: 20px;
+			line-height: 23px;
+			font-weight: 300;
+			margin-bottom: 30px;
+		}
+	}
+
+	.pagination {
+		margin: 100px 0 220px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.paginationButton {
+			span {
+				width: 64px;
+				height: 64px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid $black;
+				border-radius: 50%;
+
+				svg {
+					width: 32px;
+					height: 32px;
+				}
+			}
+		}
+
+		.paginationNumber {
+			font-size: 25px;
+			font-weight: medium;
+			color: $black;
+			margin-left: 10px;
+		}
+	}
+}
+
+
+/**************
+ * Footer
+ **************/
+
+@import "./footer";
+
+/**************
+	* Responsive
+	**************/
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	#section1 .blogTitleArea h2 span.text {
+		font-size: 64px;
+		padding-left: 30px;
+	}
+
+	#section1 .blogTitleArea h2 span.line .linejr-1 {
+		height: 270px
+	}
+
+	#section1 .cupeArea {
+		right: 620px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	#section1 .blogTitleArea h2 span.text {
+		font-size: 48px;
+		padding-left: 24px;
+	}
+
+	#section1 .blogTitleArea h2 span.line .linejr-1 {
+		height: 270px
+	}
+
+	#section1 .cupeArea {
+		right: 620px;
+	}
+
+	#blogs .card .card-body .card-title {
+		font-size: 28px;
+		line-height: 32px;
+	}
+
+	#blogs .card .card-body .card-text {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	#blogs .card .card-body .username {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	#section1 .blogTitleArea h2 span.text {
+		font-size: 34px;
+		padding-left: 16px;
+	}
+
+	#section1 .bottomRight {
+		width: 220px;
+		height: 250px;
+	}
+
+	#section1 .bottomRight::before {
+		width: 220px;
+	}
+
+	#section1 .blogTitleArea h2 span.line {
+		margin-right: 90px;
+	}
+
+	#section1 .blogTitleArea h2 span.line .linejr-1 {
+		height: 200px
+	}
+
+	#section1 .bottomRightText {
+		height: auto;
+		width: auto;
+	}
+
+	#section1 .bottomRightText p {
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	#section1 .bottomRightText::before {
+		min-width: calc(100% - 220px);
+		right: 220px
+	}
+
+	#blogs .card .card-body .card-title {
+		font-size: 28px;
+		line-height: 32px;
+	}
+
+	#blogs .card .card-body .card-text {
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	#blogs .card .card-body .username {
+		font-size: 17px;
+		line-height: 22px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	#section1 .blogTitleArea h2 span.text {
+		font-size: 28px;
+		padding-left: 8px;
+	}
+
+	#section1 .bottomRight {
+		width: 220px;
+		height: 250px;
+	}
+
+	#section1 .bottomRight::before {
+		width: 220px;
+	}
+
+	#section1 .blogTitleArea h2 span.line {
+		margin-right: 90px;
+	}
+
+	#section1 .blogTitleArea h2 span.line .linejr-1 {
+		height: 200px
+	}
+
+	#section1 .bottomRightText {
+		height: auto;
+		width: auto;
+	}
+
+	#section1 .bottomRightText::before {
+		min-width: calc(100% - 220px);
+		right: 220px
+	}
+
+	#section1 .bottomRightText p {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	#blogs .cardBottom {
+		width: 82%;
+	}
+
+	#blogs .card {
+		width: 82%;
+	}
+
+	#blogs .card .card-body .card-title {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	#blogs .card .card-body .card-text {
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	#blogs .card .card-body .username {
+		font-size: 17px;
+		line-height: 22px;
+	}
+}
